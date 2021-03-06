@@ -1,6 +1,6 @@
 #include <iostream>
 #include <math.h>
-#include "functions.h"
+#include "func.h"
 	int main()
 	{
 		//Name
@@ -20,11 +20,11 @@
 		{
 			//User Input - Main calculating variables
 			std::cout << "\nInput Weight (Lbs) or grain density: ";
-			std::cin >> wt;
-			std::cout << "Input Quantity (Feet for DetCord): ";
-			std::cin >> qty;
+			wt = getDouble();
+			std::cout << "Input Quantity: ";
+			qty = getDouble();
 			std::cout << "Input REF: ";
-			std::cin >> ref;
+			ref = getDouble();
 
 			//User Input - Accounting for grain explosive variation
 			std::cout << "\nIs this a grain explosive? 'y' or 'n': ";
@@ -57,16 +57,11 @@
 			if (response == "n")
 			{
 				isComplete = true;
-				std::cout << "\n\nTotal NEW:\t\t" << totalNEW << std::endl;
+				printNEW(totalNEW);
 			}
 		}
 		//Calculating Standoff using total NEW
-		double root = cbrt(totalNEW);
-		std::cout << "Standoff:\t\tWith Cover: " << ((int)(root * 10) + 1)
-			<< "\n\t\t\tWithout Cover: " << ((int)(root * 15) + 1)
-			<< "\n\t\t\tOverpressure: " << ((int)(root * 20) + 1)
-			<< "\n\t\t\tLight Frag: " << ((int)(root * 300) + 1)
-			<< "\n\t\t\tHeavy Frag: " << ((int)(root * 500) + 1) << "\n" << std::endl;
+		printStandoff(totalNEW);
 
 		//Ending program
 		std::cout << "End Program - to restart exit and reopen the program" << std::endl;
