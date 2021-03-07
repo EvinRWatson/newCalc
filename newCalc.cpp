@@ -28,12 +28,7 @@
 
 			//User Input - Accounting for grain explosive variation
 			std::cout << "\nIs this a grain explosive? 'y' or 'n': ";
-			do
-			{
-				std::cin >> isGrain;
-				if (isGrain != "y" && isGrain != "n")
-					std::cout << "\tError: '" << isGrain << "' is not a known input. Input 'y' or 'n': ";
-			} while (isGrain != "y" && isGrain != "n");
+			isGrain = getYesNo();
 
 			//Calculating and outputting NEW
 			NEW = getNEW(wt, qty, ref, isGrain);
@@ -44,14 +39,7 @@
 
 			//User Input - Adding another charge element
 			std::cout << "\n\nAdd another element? 'y' or 'n': ";
-			std::cin >> response;
-
-			//Input Error Check
-			while (response != "y" && response != "n")
-			{
-				std::cout << "\tError: '" << response << "' is not a known input. Input 'y' or 'n': ";
-				std::cin >> response;
-			}
+			response = getYesNo();
 
 			//Ending of loop - display total NEW
 			if (response == "n")

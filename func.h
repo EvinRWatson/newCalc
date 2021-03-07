@@ -32,6 +32,18 @@ double getDouble()
 	return output;
 }
 
+std::string getYesNo()
+{
+	std::string response;
+	std::cin >>  response;
+	while (response != "y" && response != "n")
+	{
+		std::cout << "\tError: '" << response << "' is not a known input. Input 'y' or 'n': ";
+		std::cin >> response;
+	}
+	return response;
+}
+
 
 void printNEW(double NEW)
 {
@@ -42,8 +54,8 @@ void printStandoff(double NEW)
 {
 	double root = cbrt(NEW);
 	std::cout << "Standoff:\t\tWith Cover: " << ((int)(root * 10) + 1)
-		<< "\n\t\t\tWithout Cover: " << ((int)(root * 15) + 1)
-		<< "\n\t\t\tOverpressure: " << ((int)(root * 20) + 1)
-		<< "\n\t\t\tLight Frag: " << ((int)(root * 300) + 1)
-		<< "\n\t\t\tHeavy Frag: " << ((int)(root * 500) + 1) << "\n" << std::endl;
+				<< "\n\t\t\tWithout Cover: " << ((int)(root * 15) + 1)
+				<< "\n\t\t\tOverpressure: " << ((int)(root * 20) + 1)
+				<< "\n\t\t\tLight Frag: " << ((int)(root * 300) + 1)
+				<< "\n\t\t\tHeavy Frag: " << ((int)(root * 500) + 1) << "\n" << std::endl;
 }
