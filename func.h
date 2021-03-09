@@ -53,9 +53,9 @@ void printNEW(double NEW)
 void printStandoff(double NEW)
 {
 	double root = cbrt(NEW);
-	std::cout << "Standoff:\t\tWith Cover: " << ((int)(root * 10) + 1)
-				<< "\n\t\t\tWithout Cover: " << ((int)(root * 15) + 1)
-				<< "\n\t\t\tOverpressure: " << ((int)(root * 20) + 1)
-				<< "\n\t\t\tLight Frag: " << ((int)(root * 300) + 1)
-				<< "\n\t\t\tHeavy Frag: " << ((int)(root * 500) + 1) << "\n" << std::endl;
+	std::cout << "Standoff:\t\tWith Cover: " << ((int)(root * 10) + 1) << " ft"
+				<< "\n\t\t\tWithout Cover: " << ((int)(root * 15) + 1) << " ft"
+				<< "\n\t\t\tOverpressure: " << ((int)(root * 20) + 1) << " ft"
+				<< "\n\t\t\tLight Frag: " << ((int)(root * 300) + 1) << " ft"
+				<< "\n\t\t\tHeavy Frag: " << ((int)(root * 500) + 1) << " ft" << "\n" << std::endl;
 }
